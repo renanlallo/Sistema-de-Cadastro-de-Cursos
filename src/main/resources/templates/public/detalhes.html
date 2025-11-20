@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhes do Curso</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/scripts.js}"></script>
+</head>
+<body>
+<h2>Detalhes do Curso</h2>
+
+<p><strong>Nome:</strong> <span th:text="${curso.nome}">Nome</span></p>
+<p><strong>Descrição:</strong> <span th:text="${curso.descricao}">Descrição</span></p>
+<p><strong>Carga Horária:</strong> <span th:text="${curso.cargaHoraria}">Carga</span></p>
+
+<a href="/">Voltar para Catálogo</a>
+</body>
+</html>

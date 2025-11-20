@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Curso</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/scripts.js}"></script>
+</head>
+<body>
+<h2 th:text="${curso.id == null} ? 'Cadastrar Curso' : 'Editar Curso'">Formulário</h2>
+
+<form th:action="@{/admin/cursos}" th:object="${curso}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label>Nome:</label>
+    <input type="text" th:field="*{nome}" />
+    <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+    <br/>
+
+    <label>Descrição:</label>
+    <input type="text" th:field="*{descricao}" />
+    <span th:if="${#fields.hasErrors('descricao')}" th:errors="*{descricao}"></span>
+    <br/>
+
+    <label>Carga Horária:</label>
+    <input type="number" th:field="*{cargaHoraria}" />
+    <span th:if="${#fields.hasErrors('cargaHoraria')}" th:errors="*{cargaHoraria}"></span>
+    <br/>
+
+    <button type="submit">Salvar</button>
+</form>
+
+<a href="/admin/cursos">Voltar</a>
+</body>
+</html>

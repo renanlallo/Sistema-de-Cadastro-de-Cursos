@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Cursos</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <script th:src="@{/js/scripts.js}"></script>
+</head>
+<body>
+<h2>Bem-vindo ao Catálogo de Cursos</h2>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nome</th>
+        <th>Descrição</th>
+        <th>Carga Horária</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="curso : ${cursos}">
+        <td th:text="${curso.nome}">Nome</td>
+        <td th:text="${curso.descricao}">Descrição</td>
+        <td th:text="${curso.cargaHoraria}">Carga</td>
+    </tr>
+    </tbody>
+</table>
+
+<br/>
+<a href="/login">Área Administrativa</a>
+</body>
+</html>
